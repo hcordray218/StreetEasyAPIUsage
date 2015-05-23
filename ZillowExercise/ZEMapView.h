@@ -9,10 +9,16 @@
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
 #import <MapKit/MapKit.h>
+#import "StreetEasyArea.h"
+#import "StreetEasyPriceInformation.h"
 
 @protocol ZEMapViewDelegate <NSObject>
 
 - (CLLocation *)currentLocation;
+
+- (StreetEasyArea *)currentArea;
+- (StreetEasyPriceInformation *)saleInformation;
+- (StreetEasyPriceInformation *)rentalInformation;
 
 @end
 
@@ -20,8 +26,10 @@
 
 @property (nonatomic, weak) id<ZEMapViewDelegate>zeMapViewDelegate;
 
-- (void)updateCurrentLocation:(CLLocation *)currentLocation;
-
 - (void)canViewUserLocation;
+
+- (void)updateArea;
+
+- (void)updatePriceInformation;
 
 @end

@@ -17,6 +17,8 @@
     StreetEasyService *_streetEasyService;
     
     StreetEasyArea *_currentArea;
+    StreetEasyPriceInformation *_saleInformation;
+    StreetEasyPriceInformation *_rentalInformation;
     
     ZEMapView *_zeMapView;
 }
@@ -73,12 +75,9 @@
     [super viewDidAppear:animated];
 }
 
-- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
+- (void)getCurrentAreaWithCurrentLocation
 {
-    CLLocation *location = [locations lastObject];
-    if (([location distanceFromLocation:_currentLocation] > 250) || !_currentLocation) {
-        _currentLocation = [locations lastObject];
-        
+    if (_currentLocation) {
         [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
         [_streetEasyService getAreaForLocation:_currentLocation
                                   withCallback:^(NSError *error, StreetEasyArea *area) {
@@ -88,14 +87,62 @@
                                       }
                                       else if (area) {
                                           _currentArea = area;
+                                          [_zeMapView updateArea];
+                                          
+                                          [self getSaleInformationWithCurrentArea];
+                                          [self getRentalInformationWithCurrentArea];
                                       }
                                   }];
     }
 }
 
-- (CLLocation *)currentLocation
+- (void)getSaleInformationWithCurrentArea
 {
-    return _currentLocation;
+    if (_currentArea) {
+        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+        [_streetEasyService getSaleInformationForArea:_currentArea
+                                             withBeds:0
+                                            withBaths:0
+                                         withCallback:^(NSError *error, StreetEasyPriceInformation *saleInformation) {
+                                             [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+                                             if (error) {
+                                                 
+                                             }
+                                             else if (saleInformation) {
+                                                 _saleInformation = saleInformation;
+                                                 [_zeMapView updatePriceInformation];
+                                             }
+                                         }];
+    }
+}
+
+- (void)getRentalInformationWithCurrentArea
+{
+    if (_currentArea) {
+        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+        [_streetEasyService getRentalInformationForArea:_currentArea
+                                               withBeds:0
+                                              withBaths:0
+                                           withCallback:^(NSError *error, StreetEasyPriceInformation *rentalInformation) {
+                                               [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+                                               if (error) {
+                                                   
+                                               }
+                                               else if (rentalInformation) {
+                                                   _rentalInformation = rentalInformation;
+                                                   [_zeMapView updatePriceInformation];
+                                               }
+                                           }];
+    }
+}
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
+{
+    CLLocation *location = [locations lastObject];
+    if (([location distanceFromLocation:_currentLocation] > 250) || !_currentLocation) {
+        _currentLocation = [locations lastObject];
+        [self getCurrentAreaWithCurrentLocation];
+    }
 }
 
 - (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status
@@ -119,6 +166,26 @@
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
 {
     
+}
+
+- (CLLocation *)currentLocation
+{
+    return _currentLocation;
+}
+
+- (StreetEasyArea *)currentArea
+{
+    return _currentArea;
+}
+
+- (StreetEasyPriceInformation *)saleInformation
+{
+    return _saleInformation;
+}
+
+- (StreetEasyPriceInformation *)rentalInformation
+{
+    return _rentalInformation;
 }
 
 @end

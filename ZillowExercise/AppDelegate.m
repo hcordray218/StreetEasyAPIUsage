@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "ZEMapViewController.h"
 #import <HexColors/HexColor.h>
+#import "Colors.h"
 
 @interface AppDelegate ()
 
@@ -53,9 +54,10 @@
 
 - (void)setupAppearance
 {
+    NSLog(blueColorHex);
     [[UINavigationBar appearance] setTranslucent:NO];
     [[UINavigationBar appearance] setOpaque:YES];
-    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithHexString:@"0080c6"]];
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithHexString:blueColorHex]];
     
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor],
                                                            NSFontAttributeName: [UIFont fontWithName:@"SourceSansPro-Semibold" size:24]}];

@@ -30,6 +30,7 @@
 		CD0E1B361B10ECB400E5157B /* SourceSansPro-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = CD0E1B291B10ECB300E5157B /* SourceSansPro-Semibold.otf */; };
 		CD0E1B371B10ECB400E5157B /* SourceSansPro-SemiboldIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = CD0E1B2A1B10ECB300E5157B /* SourceSansPro-SemiboldIt.otf */; };
 		CD0E1B381B10ECB400E5157B /* SIL Open Font License.txt in Resources */ = {isa = PBXBuildFile; fileRef = CD0E1B2B1B10ECB400E5157B /* SIL Open Font License.txt */; };
+		CD0E1B3F1B10F0F200E5157B /* StreetEasyPriceInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0E1B3E1B10F0F200E5157B /* StreetEasyPriceInformation.m */; };
 		CE373AB570E46E98C8FB44CA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 63BAC68DBA6B3C7AB1A9FC4B /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -79,6 +80,9 @@
 		CD0E1B291B10ECB300E5157B /* SourceSansPro-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Semibold.otf"; sourceTree = "<group>"; };
 		CD0E1B2A1B10ECB300E5157B /* SourceSansPro-SemiboldIt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-SemiboldIt.otf"; sourceTree = "<group>"; };
 		CD0E1B2B1B10ECB400E5157B /* SIL Open Font License.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "SIL Open Font License.txt"; sourceTree = "<group>"; };
+		CD0E1B3D1B10F0F200E5157B /* StreetEasyPriceInformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StreetEasyPriceInformation.h; sourceTree = "<group>"; };
+		CD0E1B3E1B10F0F200E5157B /* StreetEasyPriceInformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StreetEasyPriceInformation.m; sourceTree = "<group>"; };
+		CD0E1B401B10F43F00E5157B /* Colors.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Colors.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +146,7 @@
 			children = (
 				CD0E1AEE1B0FDF2700E5157B /* AppDelegate.h */,
 				CD0E1AEF1B0FDF2700E5157B /* AppDelegate.m */,
+				CD0E1B401B10F43F00E5157B /* Colors.h */,
 				CD0E1B1D1B0FEBBF00E5157B /* Services */,
 				CD0E1B1C1B0FEBBA00E5157B /* Models */,
 				CD0E1B1E1B0FEBC800E5157B /* Map View Controller */,
@@ -185,6 +190,8 @@
 			children = (
 				CD0E1B191B0FEBB600E5157B /* StreetEasyArea.h */,
 				CD0E1B1A1B0FEBB600E5157B /* StreetEasyArea.m */,
+				CD0E1B3D1B10F0F200E5157B /* StreetEasyPriceInformation.h */,
+				CD0E1B3E1B10F0F200E5157B /* StreetEasyPriceInformation.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -378,6 +385,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD0E1AF01B0FDF2700E5157B /* AppDelegate.m in Sources */,
+				CD0E1B3F1B10F0F200E5157B /* StreetEasyPriceInformation.m in Sources */,
 				CD0E1B151B0FE17800E5157B /* ZEMapViewController.m in Sources */,
 				CD0E1B181B0FE9EF00E5157B /* StreetEasyService.m in Sources */,
 				CD0E1B121B0FE16E00E5157B /* ZEMapView.m in Sources */,

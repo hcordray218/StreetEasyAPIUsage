@@ -45,14 +45,15 @@
                                         @"format": self.streatEasyAPIFormat,}
                               success:^(AFHTTPRequestOperation *operation, id responseObject) {
                                   callback(nil, [MTLJSONAdapter modelOfClass:[StreetEasyArea class]
-                                                          fromJSONDictionary:responseObject error:nil]);
+                                                          fromJSONDictionary:responseObject
+                                                                       error:nil]);
                               }
                               failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                                   callback(error, nil);
                               }];
 }
 
-- (void)getSalesForArea:(StreetEasyArea *)area withBeds:(NSInteger)beds withBaths:(NSInteger)baths withCallback:(void (^)(NSError *, NSArray *))callback
+- (void)getSaleInformationForArea:(StreetEasyArea *)area withBeds:(NSInteger)beds withBaths:(NSInteger)baths withCallback:(void (^)(NSError *, StreetEasyPriceInformation *))callback
 {
     NSString *criteria = [self criteraStringWithArea:area withBeds:beds withBaths:baths];
     
@@ -61,13 +62,15 @@
                                         @"key": self.streetEasyAPIKey,
                                         @"format": self.streatEasyAPIFormat}
                               success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                                  
+                                  callback(nil, [MTLJSONAdapter modelOfClass:[StreetEasyPriceInformation class]
+                                                          fromJSONDictionary:responseObject
+                                                                       error:nil]);
                               } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                                  
+                                  callback(error, nil);
                               }];
 }
 
-- (void)getRentalsForArea:(StreetEasyArea *)area withBeds:(NSInteger)beds withBaths:(NSInteger)baths withCallback:(void (^)(NSError *, NSArray *))callback
+- (void)getRentalInformationForArea:(StreetEasyArea *)area withBeds:(NSInteger)beds withBaths:(NSInteger)baths withCallback:(void (^)(NSError *, StreetEasyPriceInformation *))callback
 {
     NSString *criteria = [self criteraStringWithArea:area withBeds:beds withBaths:baths];
     
@@ -76,9 +79,11 @@
                                         @"key": self.streetEasyAPIKey,
                                         @"format": self.streatEasyAPIFormat}
                               success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                                  
+                                  callback(nil, [MTLJSONAdapter modelOfClass:[StreetEasyPriceInformation class]
+                                                          fromJSONDictionary:responseObject
+                                                                       error:nil]);
                               } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                                  
+                                  callback(error, nil);
                               }];
 }
 

@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
 #import "StreetEasyArea.h"
+#import "StreetEasyPriceInformation.h"
 
 @interface StreetEasyService : NSObject
 
@@ -16,14 +17,14 @@
 
 - (void)getAreaForLocation:(CLLocation *)location withCallback:(void (^)(NSError *, StreetEasyArea *))callback;
 
-- (void)getSalesForArea:(StreetEasyArea *)area
-               withBeds:(NSInteger)beds
-              withBaths:(NSInteger)baths
-           withCallback:(void (^)(NSError *, NSArray *))callback;
+- (void)getSaleInformationForArea:(StreetEasyArea *)area
+                         withBeds:(NSInteger)beds
+                        withBaths:(NSInteger)baths
+                     withCallback:(void (^)(NSError *, StreetEasyPriceInformation *))callback;
 
-- (void)getRentalsForArea:(StreetEasyArea *)area
-                 withBeds:(NSInteger)beds
-                withBaths:(NSInteger)baths
-             withCallback:(void (^)(NSError *, NSArray *))callback;
+- (void)getRentalInformationForArea:(StreetEasyArea *)area
+                           withBeds:(NSInteger)beds
+                          withBaths:(NSInteger)baths
+                       withCallback:(void (^)(NSError *, StreetEasyPriceInformation *))callback;
 
 @end
