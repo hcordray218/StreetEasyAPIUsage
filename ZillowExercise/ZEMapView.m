@@ -24,6 +24,8 @@
     UILabel *_rentalTitleLabel;
     UILabel *_rentalMedianPriceLabel;
     UILabel *_saleMedianPriceLabel;
+    
+    NSNumberFormatter *_numberFormatter;
 }
 @end
 
@@ -57,7 +59,7 @@
         [_informationView autoPinEdgeToSuperviewEdge:ALEdgeLeft];
         [_informationView autoPinEdgeToSuperviewEdge:ALEdgeRight];
         [_informationView autoPinEdgeToSuperviewEdge:ALEdgeBottom];
-        [_informationView setBackgroundColor:[UIColor colorWithHexString:blueColorHex]];
+        [_informationView setBackgroundColor:[UIColor whiteColor]];
     }
     
     if (!_areaLabel) {
@@ -69,7 +71,15 @@
         [_areaLabel autoSetDimension:ALDimensionHeight toSize:50];
         [_areaLabel setFont:[UIFont fontWithName:@"SourceSansPro-Regular" size:18]];
         [_areaLabel setTextAlignment:NSTextAlignmentCenter];
-        [_areaLabel setTextColor:[UIColor whiteColor]];
+        [_areaLabel setTextColor:[UIColor colorWithHexString:blueColorHex]];
+        
+        UIView *bottomBorder = [[UIView alloc] initForAutoLayout];
+        [_areaLabel addSubview:bottomBorder];
+        [bottomBorder autoPinEdgeToSuperviewEdge:ALEdgeBottom];
+        [bottomBorder autoPinEdgeToSuperviewEdge:ALEdgeLeft];
+        [bottomBorder autoPinEdgeToSuperviewEdge:ALEdgeRight];
+        [bottomBorder autoSetDimension:ALDimensionHeight toSize:1];
+        [bottomBorder setBackgroundColor:[UIColor colorWithHexString:blueColorHex]];
     }
     
     if (!_salesView) {
@@ -84,6 +94,10 @@
     
     if (!_salesTitleLabel) {
         _salesTitleLabel = [self priceInformationTitleLabelWithName:@"Sales" inView:_salesView];
+    }
+    
+    if (!_saleMedianPriceLabel) {
+        _saleMedianPriceLabel = [self priceInformationMedianLabelInView:_salesView];
     }
     
     if (!_rentalView) {
@@ -102,19 +116,41 @@
     if (!_rentalTitleLabel) {
         _rentalTitleLabel = [self priceInformationTitleLabelWithName:@"Rentals" inView:_rentalView];
     }
+    
+    if (!_rentalMedianPriceLabel) {
+        _rentalMedianPriceLabel = [self priceInformationMedianLabelInView:_rentalView];
+    }
 }
 
 - (UILabel *)priceInformationTitleLabelWithName:(NSString *)name inView:(UIView *)view
 {
     UILabel *label = [[UILabel alloc] initForAutoLayout];
     [view addSubview:label];
-    [label autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:15];
-    [label autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:15];
-    [label autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:15];
-    [label setFont:[UIFont fontWithName:@"SourceSansPro-Regular" size:16]];
+    [label autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:20];
+    [label autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:20];
+    [label autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:20];
+    [label setFont:[UIFont fontWithName:@"SourceSansPro-Regular" size:18]];
     [label setTextAlignment:NSTextAlignmentCenter];
     [label setTextColor:[UIColor colorWithHexString:blueColorHex]];
     [label setText:name];
+    [label setMinimumScaleFactor:0.75];
+    [label setAdjustsFontSizeToFitWidth:YES];
+    
+    return label;
+}
+
+- (UILabel *)priceInformationMedianLabelInView:(UIView *)view
+{
+    UILabel *label = [[UILabel alloc] initForAutoLayout];
+    [view addSubview:label];
+    [label autoPinEdgeToSuperviewEdge:ALEdgeBottom withInset:20];
+    [label autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:20];
+    [label autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:20];
+    [label setFont:[UIFont fontWithName:@"SourceSansPro-Regular" size:16]];
+    [label setTextAlignment:NSTextAlignmentCenter];
+    [label setTextColor:[UIColor colorWithHexString:blueColorHex]];
+    [label setMinimumScaleFactor:0.75];
+    [label setAdjustsFontSizeToFitWidth:YES];
     
     return label;
 }
@@ -134,7 +170,29 @@
 
 - (void)updatePriceInformation
 {
+    if (!_numberFormatter) {
+        _numberFormatter = [[NSNumberFormatter alloc] init];
+        [_numberFormatter setNumberStyle:NSNumberFormatterCurrencyStyle];
+        [_numberFormatter setCurrencyCode:@"USD"];
+    }
     
+    [_salesTitleLabel setText:[NSString stringWithFormat:@"Sales (%i)", (int)[[self.zeMapViewDelegate saleInformation] listingCount]]];
+    [_rentalTitleLabel setText:[NSString stringWithFormat:@"Rentals (%i)", (int)[[self.zeMapViewDelegate rentalInformation] listingCount]]];
+    
+    if ([[self.zeMapViewDelegate saleInformation] medianPrice]) {
+        NSString *saleMedian = [NSString stringWithFormat:@"Median: %@", [_numberFormatter stringFromNumber:[NSNumber numberWithInteger:[[self.zeMapViewDelegate saleInformation] medianPrice]]]];
+        [_saleMedianPriceLabel setText:saleMedian];
+    }
+    else {
+        [_saleMedianPriceLabel setText:nil];
+    }
+    if ([[self.zeMapViewDelegate rentalInformation] medianPrice]) {
+        NSString *rentalMedian = [NSString stringWithFormat:@"Median: %@", [_numberFormatter stringFromNumber:[NSNumber numberWithInteger:[[self.zeMapViewDelegate rentalInformation] medianPrice]]]];
+        [_rentalMedianPriceLabel setText:rentalMedian];
+    }
+    else {
+        [_rentalMedianPriceLabel setText:nil];
+    }
 }
 
 @end
