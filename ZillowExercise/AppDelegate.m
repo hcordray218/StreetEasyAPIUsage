@@ -54,7 +54,6 @@
 
 - (void)setupAppearance
 {
-    NSLog(blueColorHex);
     [[UINavigationBar appearance] setTranslucent:NO];
     [[UINavigationBar appearance] setOpaque:YES];
     [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithHexString:blueColorHex]];

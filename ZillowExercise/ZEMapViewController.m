@@ -21,6 +21,8 @@
     StreetEasyPriceInformation *_rentalInformation;
     
     ZEMapView *_zeMapView;
+    
+    UIAlertController *_alertController;
 }
 @end
 
@@ -30,7 +32,6 @@
 {
     if (self = [super init]) {
         [self setupServices];
-        [self setupLocationManager];
     }
     return self;
 }
@@ -68,11 +69,42 @@
     [super viewDidLoad];
     
     [self setTitle:@"StreetEasy"];
+
+    [self setupAlertController];
+    [self setupLocationManager];
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    
+    if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusAuthorizedWhenInUse ||
+        [CLLocationManager authorizationStatus] == kCLAuthorizationStatusAuthorizedAlways) {
+        if ([_alertController presentingViewController]) {
+            [_alertController dismissViewControllerAnimated:YES completion:nil];
+        }
+        [_zeMapView canViewUserLocation];
+    }
+    else {
+        if (![_alertController presentingViewController]) {
+            [self presentViewController:_alertController animated:YES completion:nil];
+        }
+    }
+}
+
+- (void)setupAlertController
+{
+    if (!_alertController) {
+        _alertController = [UIAlertController alertControllerWithTitle:@"Oops"
+                                                                                 message:@"We need your location!"
+                                                                          preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *goToSettings = [UIAlertAction actionWithTitle:@"Go to Settings" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+            if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]]) {
+                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
+            }
+        }];
+        [_alertController addAction:goToSettings];
+    }
 }
 
 - (void)getCurrentAreaWithCurrentLocation
@@ -150,13 +182,23 @@
     switch (status) {
         case kCLAuthorizationStatusAuthorizedAlways:
         case kCLAuthorizationStatusAuthorizedWhenInUse:
+        {
             [_zeMapView canViewUserLocation];
             break;
+        }
             
         case kCLAuthorizationStatusDenied:
         case kCLAuthorizationStatusNotDetermined:
         case kCLAuthorizationStatusRestricted:
+        {
+            if (!_alertController) {
+                [self setupAlertController];
+            }
+            if (![_alertController presentingViewController]) {
+                [self presentViewController:_alertController animated:YES completion:nil];
+            }
             break;
+        }
             
         default:
             break;
@@ -165,7 +207,13 @@
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
 {
+    if (!_alertController) {
+        [self setupAlertController];
+    }
     
+    if (![_alertController presentingViewController]) {
+        [self presentViewController:_alertController animated:YES completion:nil];
+    }
 }
 
 - (CLLocation *)currentLocation

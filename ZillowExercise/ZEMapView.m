@@ -97,7 +97,7 @@
     }
     
     if (!_salesTitleLabel) {
-        _salesTitleLabel = [self priceInformationTitleLabelWithName:@"Sales" inView:_salesView];
+        _salesTitleLabel = [self priceInformationTitleLabelWithName:@"" inView:_salesView];
     }
     
     if (!_saleMedianPriceLabel) {
@@ -118,7 +118,7 @@
     }
     
     if (!_rentalTitleLabel) {
-        _rentalTitleLabel = [self priceInformationTitleLabelWithName:@"Rentals" inView:_rentalView];
+        _rentalTitleLabel = [self priceInformationTitleLabelWithName:@"" inView:_rentalView];
     }
     
     if (!_rentalMedianPriceLabel) {
