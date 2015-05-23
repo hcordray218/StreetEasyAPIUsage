@@ -59,7 +59,9 @@
         [_informationView autoPinEdgeToSuperviewEdge:ALEdgeLeft];
         [_informationView autoPinEdgeToSuperviewEdge:ALEdgeRight];
         [_informationView autoPinEdgeToSuperviewEdge:ALEdgeBottom];
-        [_informationView setBackgroundColor:[UIColor whiteColor]];
+        [_informationView setBackgroundColor:[UIColor colorWithHexString:blueColorHex]];
+        
+//        [_informationView setBackgroundColor:[UIColor whiteColor]];
     }
     
     if (!_areaLabel) {
@@ -71,15 +73,17 @@
         [_areaLabel autoSetDimension:ALDimensionHeight toSize:50];
         [_areaLabel setFont:[UIFont fontWithName:@"SourceSansPro-Regular" size:18]];
         [_areaLabel setTextAlignment:NSTextAlignmentCenter];
-        [_areaLabel setTextColor:[UIColor colorWithHexString:blueColorHex]];
+        [_areaLabel setTextColor:[UIColor whiteColor]];
+
+//        [_areaLabel setTextColor:[UIColor colorWithHexString:blueColorHex]];
         
-        UIView *bottomBorder = [[UIView alloc] initForAutoLayout];
-        [_areaLabel addSubview:bottomBorder];
-        [bottomBorder autoPinEdgeToSuperviewEdge:ALEdgeBottom];
-        [bottomBorder autoPinEdgeToSuperviewEdge:ALEdgeLeft];
-        [bottomBorder autoPinEdgeToSuperviewEdge:ALEdgeRight];
-        [bottomBorder autoSetDimension:ALDimensionHeight toSize:1];
-        [bottomBorder setBackgroundColor:[UIColor colorWithHexString:blueColorHex]];
+//        UIView *bottomBorder = [[UIView alloc] initForAutoLayout];
+//        [_areaLabel addSubview:bottomBorder];
+//        [bottomBorder autoPinEdgeToSuperviewEdge:ALEdgeBottom];
+//        [bottomBorder autoPinEdgeToSuperviewEdge:ALEdgeLeft];
+//        [bottomBorder autoPinEdgeToSuperviewEdge:ALEdgeRight];
+//        [bottomBorder autoSetDimension:ALDimensionHeight toSize:1];
+//        [bottomBorder setBackgroundColor:[UIColor colorWithHexString:blueColorHex]];
     }
     
     if (!_salesView) {
