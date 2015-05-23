@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "ZEMapViewController.h"
+#import <HexColors/HexColor.h>
 
 @interface AppDelegate ()
 
@@ -16,7 +18,14 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    ZEMapViewController *zeMapViewController = [[ZEMapViewController alloc] init];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:zeMapViewController];
+    [[self window] setRootViewController:navigationController];
+    [[self window] makeKeyAndVisible];
+    
+    [self setupAppearance];
+    
     return YES;
 }
 
@@ -40,6 +49,16 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (void)setupAppearance
+{
+    [[UINavigationBar appearance] setTranslucent:NO];
+    [[UINavigationBar appearance] setOpaque:YES];
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithHexString:@"0080c6"]];
+    
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor],
+                                                           NSFontAttributeName: [UIFont fontWithName:@"SourceSansPro-Semibold" size:24]}];
 }
 
 @end

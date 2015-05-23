@@ -9,11 +9,28 @@
 /* Begin PBXBuildFile section */
 		CD0E1AED1B0FDF2700E5157B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0E1AEC1B0FDF2700E5157B /* main.m */; };
 		CD0E1AF01B0FDF2700E5157B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0E1AEF1B0FDF2700E5157B /* AppDelegate.m */; };
-		CD0E1AF31B0FDF2700E5157B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0E1AF21B0FDF2700E5157B /* ViewController.m */; };
 		CD0E1AF61B0FDF2700E5157B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD0E1AF41B0FDF2700E5157B /* Main.storyboard */; };
 		CD0E1AF81B0FDF2700E5157B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD0E1AF71B0FDF2700E5157B /* Images.xcassets */; };
 		CD0E1AFB1B0FDF2700E5157B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD0E1AF91B0FDF2700E5157B /* LaunchScreen.xib */; };
 		CD0E1B071B0FDF2700E5157B /* ZillowExerciseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0E1B061B0FDF2700E5157B /* ZillowExerciseTests.m */; };
+		CD0E1B121B0FE16E00E5157B /* ZEMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0E1B111B0FE16E00E5157B /* ZEMapView.m */; };
+		CD0E1B151B0FE17800E5157B /* ZEMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0E1B141B0FE17800E5157B /* ZEMapViewController.m */; };
+		CD0E1B181B0FE9EF00E5157B /* StreetEasyService.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0E1B171B0FE9EF00E5157B /* StreetEasyService.m */; };
+		CD0E1B1B1B0FEBB600E5157B /* StreetEasyArea.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0E1B1A1B0FEBB600E5157B /* StreetEasyArea.m */; };
+		CD0E1B2C1B10ECB400E5157B /* SourceSansPro-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = CD0E1B1F1B10ECB300E5157B /* SourceSansPro-Black.otf */; };
+		CD0E1B2D1B10ECB400E5157B /* SourceSansPro-BlackIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = CD0E1B201B10ECB300E5157B /* SourceSansPro-BlackIt.otf */; };
+		CD0E1B2E1B10ECB400E5157B /* SourceSansPro-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = CD0E1B211B10ECB300E5157B /* SourceSansPro-Bold.otf */; };
+		CD0E1B2F1B10ECB400E5157B /* SourceSansPro-BoldIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = CD0E1B221B10ECB300E5157B /* SourceSansPro-BoldIt.otf */; };
+		CD0E1B301B10ECB400E5157B /* SourceSansPro-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = CD0E1B231B10ECB300E5157B /* SourceSansPro-ExtraLight.otf */; };
+		CD0E1B311B10ECB400E5157B /* SourceSansPro-ExtraLightIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = CD0E1B241B10ECB300E5157B /* SourceSansPro-ExtraLightIt.otf */; };
+		CD0E1B321B10ECB400E5157B /* SourceSansPro-It.otf in Resources */ = {isa = PBXBuildFile; fileRef = CD0E1B251B10ECB300E5157B /* SourceSansPro-It.otf */; };
+		CD0E1B331B10ECB400E5157B /* SourceSansPro-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = CD0E1B261B10ECB300E5157B /* SourceSansPro-Light.otf */; };
+		CD0E1B341B10ECB400E5157B /* SourceSansPro-LightIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = CD0E1B271B10ECB300E5157B /* SourceSansPro-LightIt.otf */; };
+		CD0E1B351B10ECB400E5157B /* SourceSansPro-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = CD0E1B281B10ECB300E5157B /* SourceSansPro-Regular.otf */; };
+		CD0E1B361B10ECB400E5157B /* SourceSansPro-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = CD0E1B291B10ECB300E5157B /* SourceSansPro-Semibold.otf */; };
+		CD0E1B371B10ECB400E5157B /* SourceSansPro-SemiboldIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = CD0E1B2A1B10ECB300E5157B /* SourceSansPro-SemiboldIt.otf */; };
+		CD0E1B381B10ECB400E5157B /* SIL Open Font License.txt in Resources */ = {isa = PBXBuildFile; fileRef = CD0E1B2B1B10ECB400E5157B /* SIL Open Font License.txt */; };
+		CE373AB570E46E98C8FB44CA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 63BAC68DBA6B3C7AB1A9FC4B /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,19 +44,41 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1408E1DA60886896D8BB6417 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		63BAC68DBA6B3C7AB1A9FC4B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		8DD386CF3120DA5DBA89E284 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		CD0E1AE71B0FDF2700E5157B /* ZillowExercise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZillowExercise.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD0E1AEB1B0FDF2700E5157B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD0E1AEC1B0FDF2700E5157B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CD0E1AEE1B0FDF2700E5157B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CD0E1AEF1B0FDF2700E5157B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		CD0E1AF11B0FDF2700E5157B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		CD0E1AF21B0FDF2700E5157B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		CD0E1AF51B0FDF2700E5157B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CD0E1AF71B0FDF2700E5157B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		CD0E1AFA1B0FDF2700E5157B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		CD0E1B001B0FDF2700E5157B /* ZillowExerciseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZillowExerciseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD0E1B051B0FDF2700E5157B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD0E1B061B0FDF2700E5157B /* ZillowExerciseTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZillowExerciseTests.m; sourceTree = "<group>"; };
+		CD0E1B101B0FE16E00E5157B /* ZEMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZEMapView.h; sourceTree = "<group>"; };
+		CD0E1B111B0FE16E00E5157B /* ZEMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZEMapView.m; sourceTree = "<group>"; };
+		CD0E1B131B0FE17800E5157B /* ZEMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZEMapViewController.h; sourceTree = "<group>"; };
+		CD0E1B141B0FE17800E5157B /* ZEMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZEMapViewController.m; sourceTree = "<group>"; };
+		CD0E1B161B0FE9EF00E5157B /* StreetEasyService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StreetEasyService.h; sourceTree = "<group>"; };
+		CD0E1B171B0FE9EF00E5157B /* StreetEasyService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StreetEasyService.m; sourceTree = "<group>"; };
+		CD0E1B191B0FEBB600E5157B /* StreetEasyArea.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StreetEasyArea.h; sourceTree = "<group>"; };
+		CD0E1B1A1B0FEBB600E5157B /* StreetEasyArea.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StreetEasyArea.m; sourceTree = "<group>"; };
+		CD0E1B1F1B10ECB300E5157B /* SourceSansPro-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Black.otf"; sourceTree = "<group>"; };
+		CD0E1B201B10ECB300E5157B /* SourceSansPro-BlackIt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-BlackIt.otf"; sourceTree = "<group>"; };
+		CD0E1B211B10ECB300E5157B /* SourceSansPro-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Bold.otf"; sourceTree = "<group>"; };
+		CD0E1B221B10ECB300E5157B /* SourceSansPro-BoldIt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-BoldIt.otf"; sourceTree = "<group>"; };
+		CD0E1B231B10ECB300E5157B /* SourceSansPro-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-ExtraLight.otf"; sourceTree = "<group>"; };
+		CD0E1B241B10ECB300E5157B /* SourceSansPro-ExtraLightIt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-ExtraLightIt.otf"; sourceTree = "<group>"; };
+		CD0E1B251B10ECB300E5157B /* SourceSansPro-It.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-It.otf"; sourceTree = "<group>"; };
+		CD0E1B261B10ECB300E5157B /* SourceSansPro-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Light.otf"; sourceTree = "<group>"; };
+		CD0E1B271B10ECB300E5157B /* SourceSansPro-LightIt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-LightIt.otf"; sourceTree = "<group>"; };
+		CD0E1B281B10ECB300E5157B /* SourceSansPro-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Regular.otf"; sourceTree = "<group>"; };
+		CD0E1B291B10ECB300E5157B /* SourceSansPro-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Semibold.otf"; sourceTree = "<group>"; };
+		CD0E1B2A1B10ECB300E5157B /* SourceSansPro-SemiboldIt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-SemiboldIt.otf"; sourceTree = "<group>"; };
+		CD0E1B2B1B10ECB400E5157B /* SIL Open Font License.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "SIL Open Font License.txt"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE373AB570E46E98C8FB44CA /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,12 +100,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		51592B5FB980A6E62D7CB976 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				63BAC68DBA6B3C7AB1A9FC4B /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6CEDEAFDBBA3BF4D2FEEF84F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1408E1DA60886896D8BB6417 /* Pods.debug.xcconfig */,
+				8DD386CF3120DA5DBA89E284 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		CD0E1ADE1B0FDF2700E5157B = {
 			isa = PBXGroup;
 			children = (
 				CD0E1AE91B0FDF2700E5157B /* ZillowExercise */,
 				CD0E1B031B0FDF2700E5157B /* ZillowExerciseTests */,
 				CD0E1AE81B0FDF2700E5157B /* Products */,
+				6CEDEAFDBBA3BF4D2FEEF84F /* Pods */,
+				51592B5FB980A6E62D7CB976 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -83,8 +142,9 @@
 			children = (
 				CD0E1AEE1B0FDF2700E5157B /* AppDelegate.h */,
 				CD0E1AEF1B0FDF2700E5157B /* AppDelegate.m */,
-				CD0E1AF11B0FDF2700E5157B /* ViewController.h */,
-				CD0E1AF21B0FDF2700E5157B /* ViewController.m */,
+				CD0E1B1D1B0FEBBF00E5157B /* Services */,
+				CD0E1B1C1B0FEBBA00E5157B /* Models */,
+				CD0E1B1E1B0FEBC800E5157B /* Map View Controller */,
 				CD0E1AF41B0FDF2700E5157B /* Main.storyboard */,
 				CD0E1AF71B0FDF2700E5157B /* Images.xcassets */,
 				CD0E1AF91B0FDF2700E5157B /* LaunchScreen.xib */,
@@ -96,6 +156,7 @@
 		CD0E1AEA1B0FDF2700E5157B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CD0E1B391B10ECBA00E5157B /* Source Sans Pro */,
 				CD0E1AEB1B0FDF2700E5157B /* Info.plist */,
 				CD0E1AEC1B0FDF2700E5157B /* main.m */,
 			);
@@ -119,6 +180,55 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		CD0E1B1C1B0FEBBA00E5157B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CD0E1B191B0FEBB600E5157B /* StreetEasyArea.h */,
+				CD0E1B1A1B0FEBB600E5157B /* StreetEasyArea.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		CD0E1B1D1B0FEBBF00E5157B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				CD0E1B161B0FE9EF00E5157B /* StreetEasyService.h */,
+				CD0E1B171B0FE9EF00E5157B /* StreetEasyService.m */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		CD0E1B1E1B0FEBC800E5157B /* Map View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CD0E1B131B0FE17800E5157B /* ZEMapViewController.h */,
+				CD0E1B141B0FE17800E5157B /* ZEMapViewController.m */,
+				CD0E1B101B0FE16E00E5157B /* ZEMapView.h */,
+				CD0E1B111B0FE16E00E5157B /* ZEMapView.m */,
+			);
+			name = "Map View Controller";
+			sourceTree = "<group>";
+		};
+		CD0E1B391B10ECBA00E5157B /* Source Sans Pro */ = {
+			isa = PBXGroup;
+			children = (
+				CD0E1B1F1B10ECB300E5157B /* SourceSansPro-Black.otf */,
+				CD0E1B201B10ECB300E5157B /* SourceSansPro-BlackIt.otf */,
+				CD0E1B211B10ECB300E5157B /* SourceSansPro-Bold.otf */,
+				CD0E1B221B10ECB300E5157B /* SourceSansPro-BoldIt.otf */,
+				CD0E1B231B10ECB300E5157B /* SourceSansPro-ExtraLight.otf */,
+				CD0E1B241B10ECB300E5157B /* SourceSansPro-ExtraLightIt.otf */,
+				CD0E1B251B10ECB300E5157B /* SourceSansPro-It.otf */,
+				CD0E1B261B10ECB300E5157B /* SourceSansPro-Light.otf */,
+				CD0E1B271B10ECB300E5157B /* SourceSansPro-LightIt.otf */,
+				CD0E1B281B10ECB300E5157B /* SourceSansPro-Regular.otf */,
+				CD0E1B291B10ECB300E5157B /* SourceSansPro-Semibold.otf */,
+				CD0E1B2A1B10ECB300E5157B /* SourceSansPro-SemiboldIt.otf */,
+				CD0E1B2B1B10ECB400E5157B /* SIL Open Font License.txt */,
+			);
+			name = "Source Sans Pro";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -126,9 +236,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CD0E1B0A1B0FDF2700E5157B /* Build configuration list for PBXNativeTarget "ZillowExercise" */;
 			buildPhases = (
+				78789B585926AD942199B7B6 /* Check Pods Manifest.lock */,
 				CD0E1AE31B0FDF2700E5157B /* Sources */,
 				CD0E1AE41B0FDF2700E5157B /* Frameworks */,
 				CD0E1AE51B0FDF2700E5157B /* Resources */,
+				EE9DEFAE16966920769C6409 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -199,9 +311,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD0E1B361B10ECB400E5157B /* SourceSansPro-Semibold.otf in Resources */,
+				CD0E1B321B10ECB400E5157B /* SourceSansPro-It.otf in Resources */,
 				CD0E1AF61B0FDF2700E5157B /* Main.storyboard in Resources */,
 				CD0E1AFB1B0FDF2700E5157B /* LaunchScreen.xib in Resources */,
+				CD0E1B371B10ECB400E5157B /* SourceSansPro-SemiboldIt.otf in Resources */,
+				CD0E1B351B10ECB400E5157B /* SourceSansPro-Regular.otf in Resources */,
+				CD0E1B2F1B10ECB400E5157B /* SourceSansPro-BoldIt.otf in Resources */,
+				CD0E1B311B10ECB400E5157B /* SourceSansPro-ExtraLightIt.otf in Resources */,
+				CD0E1B301B10ECB400E5157B /* SourceSansPro-ExtraLight.otf in Resources */,
 				CD0E1AF81B0FDF2700E5157B /* Images.xcassets in Resources */,
+				CD0E1B2C1B10ECB400E5157B /* SourceSansPro-Black.otf in Resources */,
+				CD0E1B381B10ECB400E5157B /* SIL Open Font License.txt in Resources */,
+				CD0E1B331B10ECB400E5157B /* SourceSansPro-Light.otf in Resources */,
+				CD0E1B341B10ECB400E5157B /* SourceSansPro-LightIt.otf in Resources */,
+				CD0E1B2E1B10ECB400E5157B /* SourceSansPro-Bold.otf in Resources */,
+				CD0E1B2D1B10ECB400E5157B /* SourceSansPro-BlackIt.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,14 +339,50 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		78789B585926AD942199B7B6 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		EE9DEFAE16966920769C6409 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CD0E1AE31B0FDF2700E5157B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD0E1AF31B0FDF2700E5157B /* ViewController.m in Sources */,
 				CD0E1AF01B0FDF2700E5157B /* AppDelegate.m in Sources */,
+				CD0E1B151B0FE17800E5157B /* ZEMapViewController.m in Sources */,
+				CD0E1B181B0FE9EF00E5157B /* StreetEasyService.m in Sources */,
+				CD0E1B121B0FE16E00E5157B /* ZEMapView.m in Sources */,
 				CD0E1AED1B0FDF2700E5157B /* main.m in Sources */,
+				CD0E1B1B1B0FEBB600E5157B /* StreetEasyArea.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,6 +508,7 @@
 		};
 		CD0E1B0B1B0FDF2700E5157B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1408E1DA60886896D8BB6417 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ZillowExercise/Info.plist;
@@ -357,6 +519,7 @@
 		};
 		CD0E1B0C1B0FDF2700E5157B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8DD386CF3120DA5DBA89E284 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ZillowExercise/Info.plist;
@@ -418,6 +581,7 @@
 				CD0E1B0C1B0FDF2700E5157B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CD0E1B0D1B0FDF2700E5157B /* Build configuration list for PBXNativeTarget "ZillowExerciseTests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +590,7 @@
 				CD0E1B0F1B0FDF2700E5157B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
